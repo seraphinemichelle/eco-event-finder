@@ -9,11 +9,15 @@ DEBUG = False
 ALLOWED_HOSTS = ['*']
 
 CORS_ALLOWED_ORIGINS = [
-    "https://eco-event-finder.vercel.app/",
+    "https://eco-event-finder.vercel.app",
 ]
 CSRF_TRUSTED_ORIGINS = [
-    'https://eco-event-finder.up.railway.app/',
+    'https://eco-event-finder.up.railway.app',
 ]
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
 
 INSTALLED_APPS = [
     'django.contrib.admin',
